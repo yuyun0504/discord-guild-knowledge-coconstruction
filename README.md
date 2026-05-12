@@ -73,20 +73,15 @@
 │   └── 04_correlation_analysis/       # SNA × ENA 整合分析
 │       └── spearman_correlation.xlsx
 │
-├── figures/                           # 論文圖表原始檔
+├── Pictures/                           # 論文圖表原始檔
 │   ├── figure_10_sna_network.svg
 │   ├── figure_12_ena_space.png
 │   └── ...
 │
 └── docs/                              # 補充文件
     ├── coding_protocol.md             # 編碼操作型定義
-    ├── reliability_checks.md          # 編碼信度檢驗詳細結果
-    └── changelog.md                   # 版本變更紀錄
-```
-
-> ⚠️ 實際檔名與結構可依你的最終整理結果調整，建議保持「資料、程式、文件」三層架構。
-
----
+    ├── reliability_checks.md       # 編碼信度檢驗詳細結果
+    └── consent_form_template       # 論文知情同意書空白頁
 
 ## 🔧 使用方法 / How to Use
 
