@@ -49,39 +49,37 @@
 ├── CITATION.cff                       # 引用格式
 ├── ETHICS.md                          # 研究倫理聲明
 │
-├── data/                              # 去識別化研究資料
-│   ├── 01_raw_anonymized/             # 原始對話資料（已去識別化）
-│   │   └── discord_messages_anon.csv
-│   ├── 02_coded/                      # K1-K8 編碼結果
-│   │   ├── coding_results.csv
-│   │   └── coding_scheme.md
-│   └── 03_processed/                  # 分析所需之處理後資料
-│       ├── interaction_matrix_22x22.csv
-│       ├── sna_centrality_results.csv
-│       └── ena_metrics.csv
+├──github-upload/
 │
-├── scripts/                           # 分析程式碼
-│   ├── 01_preprocessing/              # 資料前處理
-│   │   ├── anonymization.py
-│   │   └── data_filtering.py
-│   ├── 02_sna_analysis/               # SNA 分析
-│   │   ├── build_interaction_matrix.py
-│   │   └── centrality_calculation.md  # Gephi 操作說明
-│   ├── 03_ena_analysis/               # ENA 分析
-│   │   ├── ena_webtool_input.csv
-│   │   └── ena_analysis_steps.md      # ENA Webtool 操作說明
-│   └── 04_correlation_analysis/       # SNA × ENA 整合分析
-│       └── spearman_correlation.xlsx
+├── 📊 analysis/                              # 統計分析結果
+│   ├── H2指標計算明細.xlsx                   # 各成員主題多元性與 K-K 配對數計算
+│   ├── SNA與KK配對數之Spearman相關.xlsx      # 表格 8：SNA 中心性 × K-K 配對 相關分析
+│   ├── SNA與主題多元性之Spearman相關.xlsx    # 表格 9：SNA 中心性 × 主題多元性 相關分析
+│   ├── 論文SNA分析-Edges節點.xlsx            # SNA 邊（互動）資料
+│   └── 論文SNA分析-Nodes節點.xlsx            # SNA 節點中心性指標（Gephi 輸出）
 │
-├── Pictures/                           # 論文圖表原始檔
-│   ├── figure_10_sna_network.svg
-│   ├── figure_12_ena_space.png
-│   └── ...
+├── 📂 data/                                  # 去識別化研究資料
+│   ├── 22x22矩陣(SNA).xlsx                   # 22 位成員互動矩陣 + 對話人工編碼
+│   ├── K1-K8編碼(ENA).xlsx                   # ENA 用編碼資料（K1-K8 + 主/次要編碼）
+│   └── SNA相關資料.xlsx                      # SNA 補充資料
 │
-└── docs/                              # 補充文件
-    ├── coding_protocol.md             # 編碼操作型定義
-    ├── reliability_checks.md       # 編碼信度檢驗詳細結果
-    └── consent_form_template       # 論文知情同意書空白頁
+├── 📄 docs/                                  # 補充文件
+│   ├── consent_form_template.pdf             # 知情同意書空白範本
+│   ├── ENA編碼準則.docx                      # K1-K8 操作型定義與編碼規則
+│   └── SNA互動次數計算準則.docx              # SNA 互動矩陣建構規則
+│
+└── 🖼️ Pictures/                              # 論文圖表
+    ├── SNA圖.png                             # 圖表 10：22 位成員 SNA 網路結構圖
+    ├── 圖表8_K1-K8編碼類別分布.png           # K1-K8 編碼類別分布
+    ├── 圖表9_各成員發言次數分布.png          # 22 位成員發言次數
+    ├── 圖表11.png                            # 發言次數與度中心性散布圖
+    ├── 圖12原圖.png                          # 圖表 12：ENA 二維空間分布
+    ├── comparison.png                        # 三類成員 ENA 對照圖
+    ├── comparison(標註版-有SVD).jpg          # 含 SVD 軸標註版本
+    ├── P15.png / P4.png / P5.png / P10.png   # 圖表 14-17：代表性成員 ENA 個別網路
+    ├── P18.png / P18放大.png                 # P18 個別 ENA 網路
+    ├── R1.png                                # 圖表 18：R1 個案 ENA 網路
+    └── P4 SNA.png                            # 補充：P4 SNA 局部圖
 
 ## 🔧 使用方法 / How to Use
 
@@ -99,25 +97,38 @@ openpyxl >= 3.1
 - **Gephi 0.11**（SNA 中心性計算與視覺化）
 - **ENA Webtool**（https://www.epistemicnetwork.org/）
 
-### 重現分析步驟 / Reproducing the Analysis
+### 🔄 重現分析步驟 / Reproducing the Analysis
 
-```bash
-# 1. 安裝套件
-pip install -r requirements.txt
+本研究之分析以 **Excel + Gephi + ENA Webtool** 完成，無需程式環境。  
+請依下列步驟重現本研究結果：
 
-# 2. 資料前處理（如使用原始資料）
-python scripts/01_preprocessing/data_filtering.py
+#### 1️⃣ 取得原始資料
+- 開啟 `data/K1-K8編碼(ENA).xlsx`：含 4,571 筆對話之 K1-K8 編碼結果
+- 開啟 `data/22x22矩陣(SNA).xlsx`：22 位成員之互動矩陣
 
-# 3. 建構互動矩陣
-python scripts/02_sna_analysis/build_interaction_matrix.py
+#### 2️⃣ SNA 中心性計算（使用 Gephi）
+- 將 `analysis/論文SNA分析-Edges節點.xlsx` 與 `analysis/論文SNA分析-Nodes節點.xlsx` 匯入 Gephi
+- 計算五項中心性指標：度中心性、加權度、中介中心性、接近中心性、特徵向量中心性
+- 詳細操作流程：請參閱 `docs/SNA互動次數計算準則.docx`
 
-# 4. SNA 中心性計算 → 匯入 Gephi（詳見 02_sna_analysis/centrality_calculation.md）
+#### 3️⃣ ENA 認知網路分析（使用 ENA Webtool）
+- 前往 [ENA Webtool](https://www.epistemicnetwork.org/)
+- 上傳 `data/K1-K8編碼(ENA).xlsx`
+- 參數設定：Units = `user`、Conversations = `convo_id`、Stanza Window = 5
+- 編碼準則詳見 `docs/ENA編碼準則.docx`
 
-# 5. ENA 分析 → 上傳至 ENA Webtool（詳見 03_ena_analysis/ena_analysis_steps.md）
+#### 4️⃣ SNA × ENA 整合相關分析
+- 開啟 `analysis/H2指標計算明細.xlsx` 檢視各成員主題多元性與 K-K 配對數
+- 開啟 `analysis/SNA與KK配對數之Spearman相關.xlsx`（H2 檢驗 — 表格 8）
+- 開啟 `analysis/SNA與主題多元性之Spearman相關.xlsx`（H2 檢驗 — 表格 9）
 
-# 6. SNA × ENA 整合相關分析
-# 直接開啟 scripts/04_correlation_analysis/spearman_correlation.xlsx
-```
+#### 5️⃣ 圖表對照
+所有論文圖表之原始檔皆存放於 `Pictures/` 資料夾，檔名對應論文章節編號。
+
+---
+
+> 💡 **無需安裝任何程式環境**：本研究所有分析均使用 Excel、Gephi（免費下載）  
+> 與 ENA Webtool（線上工具）完成，僅需開啟對應檔案即可重現結果。
 
 ---
 
@@ -133,7 +144,7 @@ python scripts/02_sna_analysis/build_interaction_matrix.py
 |---|---|
 | 參與成員 | 22 位（含研究者本人 R1）|
 | 蒐集期間 | 1 個月 |
-| 對話總數（篩選後） | 4,603 筆 |
+| 對話總數（篩選後） | 4,571 筆 |
 
 ### 編碼架構（K1-K8）
 
