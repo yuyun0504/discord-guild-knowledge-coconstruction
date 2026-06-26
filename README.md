@@ -56,8 +56,9 @@ Network Analysis and Epistemic Network Analysis |
 │   ├── H2指標計算明細.xlsx                   # 各成員主題多元性與 K-K 配對數計算
 │   ├── SNA與KK配對數之Spearman相關.xlsx      # 表格 8：SNA 中心性 × K-K 配對 相關分析
 │   ├── SNA與主題多元性之Spearman相關.xlsx    # 表格 9：SNA 中心性 × 主題多元性 相關分析
-│   ├── 論文SNA分析-Edges節點.xlsx            # SNA 邊（互動）資料
-│   └── 論文SNA分析-Nodes節點.xlsx            # SNA 節點中心性指標（Gephi 輸出）
+│   ├── 論文SNA分析-Edges節點.xlsx           
+│   ├── 圖表11_發言次數與度中心性散布圖資料.xlsx #圖表11資料
+│   └── 論文SNA分析-Nodes節點.xlsx            
 │
 ├── 📂 data/                                  # 去識別化研究資料
 │   ├── 22x22矩陣(SNA).xlsx                   # 22 位成員互動矩陣 + 對話人工編碼
@@ -73,7 +74,7 @@ Network Analysis and Epistemic Network Analysis |
     ├── SNA圖.png                             # 圖表 10：22 位成員 SNA 網路結構圖
     ├── 圖表8_K1-K8編碼類別分布.png           # K1-K8 編碼類別分布
     ├── 圖表9_各成員發言次數分布.png          # 22 位成員發言次數
-    ├── 圖表11.png                            # 發言次數與度中心性散布圖
+    ├── 圖11.png                            # 發言次數與度中心性散布圖
     ├── 圖12原圖.png                          # 圖表 12：ENA 二維空間分布
     ├── comparison.png                        # 三類成員 ENA 對照圖
     ├── comparison(標註版-有SVD).jpg          # 含 SVD 軸標註版本
