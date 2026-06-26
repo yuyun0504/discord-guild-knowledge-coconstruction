@@ -274,4 +274,4 @@ https://doi.org/10.5281/zenodo.XXXXXXX
 
 ---
 
-*Last updated: 2026-XX-XX*
+*Last updated: 2026-06-26*
