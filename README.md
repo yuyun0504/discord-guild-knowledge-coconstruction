@@ -14,7 +14,8 @@
 | 項目 | 內容 |
 |---|---|
 | **論文題目** | 以社會網路和認知網路分析虛擬社群互動與知識共構之研究 |
-| **English Title** | A Study on the Relationship between Virtual Community Interaction and Knowledge Co-construction Using Social Network Analysis and Epistemic Network Analysis |
+| **English Title** | A Study on Virtual Community Interactions and Knowledge Co-construction Using Social
+Network Analysis and Epistemic Network Analysis |
 | **作者 / Author** | 賴鈺昀（Yu-Yun Lai） |
 | **指導教授 / Advisor** | 廖慶榮 教授 |
 | **學校 / Institution** | 中原大學資訊管理學系 / Chung Yuan Christian University, Department of Information Management |
@@ -250,10 +251,7 @@ https://doi.org/10.5281/zenodo.XXXXXXX
 
 如對本研究有任何疑問或希望進一步合作，歡迎透過下列方式聯繫：
 
-- **GitHub Issues**：[此 repo 之 Issues 頁面]
 - **Email**：[unknown20020504@gmail.com]
-
-> 💡 *請使用個人長期信箱，避免使用學校信箱（畢業後可能停用）*
 
 ---
 
@@ -261,10 +259,9 @@ https://doi.org/10.5281/zenodo.XXXXXXX
 
 | 版本 | 日期 | 說明 |
 |---|---|---|
-| v1.0 | 2026-06-XX | 論文口試提交版本（凍結版本） |
-| v1.1 | 2026-XX-XX | 口試後修正版本（如有）|
+| v1.0 | 2026-06-03 | 論文口試提交版本（凍結版本） |
+| v1.1 | 2026-06-26 | 口試後修正版本|
 
-完整變更紀錄請見 [`docs/changelog.md`](docs/changelog.md)。
 
 ---
 
